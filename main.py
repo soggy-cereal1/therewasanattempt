@@ -23,25 +23,35 @@ import numpy as np
 #         uvc.send(frame)
         
 # Reading the image
-img = cv2.imread("IMG_4206.jpg")
+img = cv2.imread("bettersleeve2.jpg")
 
 # convert to hsv colorspace
 
 # hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
 # lower bound and upper bound for blue color
-lower_bound = np.array([64, 10, 10])
-upper_bound = np.array([255, 75, 75])	 
+# lower_bound = np.array([64, 10, 10])
+# upper_bound = np.array([255, 60, 60])	 
 
-# I can't tell what i did but hte above detects the cube's lines and the below detects light colors
-# I suck at visualizing things what does this mean
-# HSV doesn't work, i tried BGR for ^ and RGB for below the same values but flipped
+# lower bound and upper bound for red color
 
-# HSV is an attempt at the below because what is going on
+# lower_bound = np.array([20, 20, 60])
+# upper_bound = np.array([70, 70, 255])	
 
-# lower_bound = np.array([170, 10, 100])
-# upper_bound = np.array([258, 100, 100])	 
+# lower bound and upper bound for cyan
 
+# lower_bound = np.array([100,100,20])
+# upper_bound = np.array([255,255,90])
+
+# lower and upper bound for magenta
+
+# lower_bound = np.array([60, 10, 60])
+# upper_bound = np.array([255,50,255])
+
+# lower and upper bound for yellow
+
+# lower_bound = np.array([20, 100, 100])
+# upper_bound = np.array([40, 255, 255])
 
 # find the colors within the boundaries
 mask = cv2.inRange(img, lower_bound, upper_bound)
@@ -66,12 +76,7 @@ output = cv2.drawContours(segmented_img, contours, -1, (0, 255, 0), 3)
 
 # Showing the output
 
-# cv2.imshow("Output", output)
-
-# lower bound and upper bound for red color
-
-# lower_bound = np.array([5, 22, 22])
-# upper_bound = np.array([340, 25, 24])	 
+# cv2.imshow("Output", output) 
 
 # Draw contour on original image
 
