@@ -12,44 +12,72 @@ import org.openftc.easyopencv.OpenCvPipeline;
 import java.util.List;
 import java.util.ArrayList;
 
-public class BarCodeDetector extends OpenCvPipeline {
+public static void main(String[] args) {
 
     Mat frame = new Mat();
+    frame = VideoCapture(1);
+    private ElementLocation location = ElementLocation.NONE;
 
-    public Mat Masking(Mat input) {
+    public class Mat Masking(Mat input) {
 
-        int[][] lower_bounds = {{100, 100, 90}, {100, 20, 100}, {70, 130, 130}};
-        int[][] upper_bounds = {{255, 255, 130}, {255, 80, 255}, {120, 255, 255}};
+        List<Scalar> lower_bounds = new ArrayList<>();
+        lower_bounds.addAll((100, 100, 90), (100, 20, 100), (70, 130, 130));
+
+        List<Scalar> upper_bounds = new ArrayList<>();
+        upper_bounds.addAll((255, 255, 130), (255, 80, 255), (120, 255, 255));
+        Mat thresh = new Mat();
 
         while (true) {
         
-            // frame = VideoCapture.read(cap);
+            frame = VideoCapture.read(cap);
 
 
             for(int i=0; i<4; i++) {
+
+
+                // the above is supposed to do what the below is supposed to do
+
+                Mat mask = new Mat();
+                Imgproc.Canny(thresh, mask, 100, 300);
+                thresh.release();
+                // oftentimes the edges are disconnected, findContours connects these edges
+                // then find the bounding rectangles of those contours
                 
-                Mat mask = Core.inRange(frame, lower_bounds[i], upper_bounds[i]);
+                List<MatOfPoint> contours = new ArrayList<>();
+                Mat hierarchy = new Mat();
+                Imgproc.findContours(edges, contours, hierarchy, Imgproc.RETR_TREE, Imgproc.CHAIN_APPROX_SIMPLE);
+                hierarchy.release();
+                edges.release();
+                MatOfPoint2f contoursPoly;
+                Rect[] boundRect = new Rect[contours.size()];
+
+
+                if(Rect boundRect.length = 240) {
+                    location = ElementLocation(i);
+                } else {
+                    break;
+                }
                 
-                // kernel = np.ones((7,7),np.uint8);
-
-                mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel);
-                mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel);
-
-                if(Mat) {
-                    return i;
-                } 
-                
-                // segmented_img = cv2.bitwise_and(frame, frame, mask=mask);
-
-                // contours, hierarchy = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE);
-
-                // output = cv2.drawContours(segmented_img, contours, -1, (0, 255, 0), 3);
-
-                // # Draw contour on original image
-
-                // output = cv2.drawContours(frame, contours, -1, (0, 255, 0), 3);
             }
 
+        }
+
+        public enum ElementLocation {
+            LEFT(1),
+            MIDDLE(2),
+            RIGHT(3),
+            NONE(0);
+    
+            int val;
+
+    
+            ElementLocation(int i) {
+                val = i;
+            }
+    
+            public int val() {
+                return val;
+            }
         }
     }
 }

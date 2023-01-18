@@ -34,3 +34,6 @@ int main()
     cout << "a and b do not form a right triangle with hypotenuse c.";
     }
 }
+
+
+// what is going on? what do i do

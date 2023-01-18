@@ -45,14 +45,6 @@ while True:
     lower_bound_y = np.array([70, 130, 130])
     upper_bound_y = np.array([120, 255, 255])
 
-    #red
-    lower_bound_r = np.array([10, 10, 130])
-    upper_bound_r = np.array([70, 50, 255])
-
-    #blue # WIP
-    lower_bound_b = np.array([100, 10, 10])
-    upper_bound_b = np.array([255, 80, 80])
-
 
     mask = cv2.inRange(frame, lower_bound_y, upper_bound_y)
 
@@ -67,6 +59,7 @@ while True:
 
     # Segment only the detected f
     segmented_img = cv2.bitwise_and(frame, frame, mask=mask)
+
     # Find contours from the mask
 
     contours, hierarchy = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
