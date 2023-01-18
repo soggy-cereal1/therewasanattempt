@@ -41,7 +41,7 @@ public class LocationDetector extends OpenCvPipeline {
 
             for(int i=0; (i<4) && !stop; i++){
 
-                Core.inRange(frame,lower_bounds[i],upper_bounds[i],thresh);
+                Core.inRange(frame,lower_bounds.get(i),upper_bounds.get(i),thresh);
 
                 Mat mask=new Mat();
                 Imgproc.Canny(thresh,mask,100,300);
