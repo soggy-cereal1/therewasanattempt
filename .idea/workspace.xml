@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f45ecaf4-b845-422b-9a19-2bceb0d93b8b" name="Changes" comment="okay so i added stuff to make it stop once it finds something i think">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main.java" afterDir="false" />
-    </list>
+    <list default="true" id="f45ecaf4-b845-422b-9a19-2bceb0d93b8b" name="Changes" comment="variable stuff" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +58,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674045530164</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed? stuff regarding list indexes idk if it was a problem bc intellij doesnt give me errors and vscode gives me liek 200">
+      <created>1674045673794</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674045673794</updated>
+    </task>
+    <task id="LOCAL-00004" summary="variable stuff">
+      <created>1674045736615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674045736615</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +89,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added something and copy pasted more code over it might work?" />
     <MESSAGE value="okay so i added stuff to make it stop once it finds something i think" />
-    <option name="LAST_COMMIT_MESSAGE" value="okay so i added stuff to make it stop once it finds something i think" />
+    <MESSAGE value="fixed? stuff regarding list indexes idk if it was a problem bc intellij doesnt give me errors and vscode gives me liek 200" />
+    <MESSAGE value="variable stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="variable stuff" />
   </component>
 </project>
