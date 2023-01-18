@@ -86,7 +86,7 @@ public class LocationDetector extends OpenCvPipeline {
         int val;
 
 
-        ElementLocation(int i) {
+        IndicatedLocation(int i) {
             val = i;
         }
 
@@ -94,7 +94,7 @@ public class LocationDetector extends OpenCvPipeline {
             return val;
         }
     }
-    public ElementLocation getLocation() {
+    public IndicatedLocation getLocation() {
         return this.location;
     }
 
