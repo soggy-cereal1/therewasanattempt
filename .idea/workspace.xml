@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f45ecaf4-b845-422b-9a19-2bceb0d93b8b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f45ecaf4-b845-422b-9a19-2bceb0d93b8b" name="Changes" comment="added something and copy pasted more code over it might work?">
       <change beforePath="$PROJECT_DIR$/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +46,14 @@
       <option name="presentableId" value="Default" />
       <updated>1673840033389</updated>
     </task>
+    <task id="LOCAL-00001" summary="added something and copy pasted more code over it might work?">
+      <created>1674045181584</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674045181585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -59,5 +66,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added something and copy pasted more code over it might work?" />
+    <option name="LAST_COMMIT_MESSAGE" value="added something and copy pasted more code over it might work?" />
   </component>
 </project>

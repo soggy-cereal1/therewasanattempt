@@ -12,13 +12,13 @@ import org.openftc.easyopencv.OpenCvPipeline;
 import java.util.List;
 import java.util.ArrayList;
 
-public static void main(String[] args) {
+public class LocationDetector extends OpenCvPipeline {
 
     Mat frame = new Mat();
     frame = VideoCapture(1);
     private IndicatedLocation location = IndicatedLocation.NONE;
 
-    public class Mat processFrame(Mat input){
+    public Mat processFrame(Mat input){
 
         if(mat.empty()){
             location=IndicatedLocation.NONE;
@@ -32,12 +32,14 @@ public static void main(String[] args) {
         upper_bounds.addAll((255,255,130),(255,80,255),(120,255,255));
         Mat thresh=new Mat();
 
-        while(true){
+        bool stop = false;
+
+        while(!stop){
 
             frame=VideoCapture.read(cap);
 
 
-            for(int i=0;i<4;i++){
+            for(int i=0; (i<4) && !stop; i++){
 
                 Core.inRange(frame,lower_bounds[i],upper_bounds[i],thresh);
 
@@ -66,10 +68,10 @@ public static void main(String[] args) {
 
                 if(Rect boundRect[i].x>200){
                     location=IndicatedLocation(i);
+                    stop = true;
                 } else {
                     break;
                 }
-
             }
 
         }
