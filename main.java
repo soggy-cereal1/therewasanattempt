@@ -12,39 +12,40 @@ import org.openftc.easyopencv.OpenCvPipeline;
 import java.util.List;
 import java.util.ArrayList;
 
-public class LocationDetector extends OpenCvPipeline {
+public class LocationFinder extends OpenCvPipeline {
 
     Mat frame = new Mat();
-    frame = VideoCapture(1);
     private IndicatedLocation location = IndicatedLocation.NONE;
 
     public Mat processFrame(Mat input){
 
-        if(mat.empty()){
+        if(frame.empty()){
             location=IndicatedLocation.NONE;
             return input;
         }
 
         List<Scalar> lower_bounds=new ArrayList<>();
-        lower_bounds.addAll((100,100,90),(100,20,100),(70,130,130));
+        lower_bounds.add(new Scalar(100,100,90));
+        lower_bounds.add(new Scalar(100,20,100));
+        lower_bounds.add(new Scalar(70,130,130));
 
         List<Scalar> upper_bounds=new ArrayList<>();
-        upper_bounds.addAll((255,255,130),(255,80,255),(120,255,255));
+        upper_bounds.add(new Scalar(255,255,130));
+        upper_bounds.add(new Scalar(255, 80, 255));
+        upper_bounds.add(new Scalar(120, 255, 255));
+
         Mat thresh=new Mat();
 
-        bool stop = false;
+        boolean stop = false;
 
         while(!stop){
-
-            frame=VideoCapture.read(cap);
-
 
             for(int i=0; (i<4) && !stop; i++){
 
                 Core.inRange(frame,lower_bounds.get(i),upper_bounds.get(i),thresh);
 
-                Mat mask=new Mat();
-                Imgproc.Canny(thresh,mask,100,300);
+                Mat edges=new Mat();
+                Imgproc.Canny(thresh,edges,100,300);
                 thresh.release();
                 // oftentimes the edges are disconnected, findContours connects these edges
                 // then find the bounding rectangles of those contours
@@ -66,8 +67,8 @@ public class LocationDetector extends OpenCvPipeline {
                 }
 
 
-                if(Rect boundRect[i].x>200){
-                    location=IndicatedLocation(i);
+                if(boundRect[i].x>200){
+                    location = IndicatedLocation.values()[i];
                     stop = true;
                 } else {
                     break;
@@ -75,6 +76,7 @@ public class LocationDetector extends OpenCvPipeline {
             }
 
         }
+        return frame;
     }
 
     public enum IndicatedLocation {
