@@ -25,28 +25,30 @@ import depthai as dai
 #         uvc.send(frame)
         
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(2)
 while True:
     ret, frame = cap.read()
     # find the colors within the boundaries
 
     # lower bound and upper bound for cyan
 
-    lower_bound_c = np.array([100,100,90])
-    upper_bound_c = np.array([255,255,130])
+    lower_bound_c = np.array([140,120,90])
+    upper_bound_c = np.array([255,255,145])
 
     # lower and upper bound for magenta
 
-    lower_bound_m = np.array([100, 20, 100])
-    upper_bound_m = np.array([255,80,255])
+    lower_bound_m = np.array([90, 60, 100])
+    upper_bound_m = np.array([255,110,255])
 
     # lower and upper bound for yellow
 
-    lower_bound_y = np.array([70, 130, 130])
+    lower_bound_y = np.array([57, 110, 130])
     upper_bound_y = np.array([120, 255, 255])
 
+    lower_bound_g = np.array([57,78,65])
+    upper_bound_g = np.array([105,255,100])
 
-    mask = cv2.inRange(frame, lower_bound_y, upper_bound_y)
+    mask = cv2.inRange(frame, lower_bound_m, upper_bound_m)
 
 
     # define kernel size  
