@@ -32,14 +32,14 @@ while True:
 
     # lower bound and upper bound for cyan
 
-    lower_bound_c = np.array([140,120,90])
-    upper_bound_c = np.array([255,255,145])
+    lower_bound_c = np.array([135,130,100])
+    upper_bound_c = np.array([255,255,150])
 
     # lower and upper bound for magenta
 
-    lower_bound_m = np.array([90, 60, 100])
-    upper_bound_m = np.array([255,110,255])
-
+    lower_bound_m = np.array([100, 70, 120])
+    upper_bound_m = np.array([255,140,255])
+ 
     # lower and upper bound for yellow
 
     lower_bound_y = np.array([57, 110, 130])
@@ -47,8 +47,8 @@ while True:
 
     lower_bound_g = np.array([57,78,65])
     upper_bound_g = np.array([105,255,100])
-
     mask = cv2.inRange(frame, lower_bound_m, upper_bound_m)
+
 
 
     # define kernel size  
