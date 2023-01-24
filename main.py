@@ -32,12 +32,12 @@ while True:
 
     # lower bound and upper bound for cyan
 
-    lower_bound_c = np.array([135,130,100])
-    upper_bound_c = np.array([255,255,150])
+    lower_bound_c = np.array([195,155,100])
+    upper_bound_c = np.array([255,255,160])
 
     # lower and upper bound for magenta
 
-    lower_bound_m = np.array([100, 70, 120])
+    lower_bound_m = np.array([120, 90, 130])
     upper_bound_m = np.array([255,140,255])
  
     # lower and upper bound for yellow
@@ -47,7 +47,7 @@ while True:
 
     lower_bound_g = np.array([57,78,65])
     upper_bound_g = np.array([105,255,100])
-    mask = cv2.inRange(frame, lower_bound_m, upper_bound_m)
+    mask = cv2.inRange(frame, lower_bound_c, upper_bound_c)
 
 
 
