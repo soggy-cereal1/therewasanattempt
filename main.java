@@ -47,7 +47,7 @@ public class LocationFinder extends OpenCvPipeline {
                 Mat edges=new Mat();
                 Imgproc.Canny(thresh,edges,100,300);
                 thresh.release();
-                // oftentimes the edges are disconnected, findContours connects these edges
+                oftentimes the edges are disconnected, findContours connects these edges
                 // then find the bounding rectangles of those contours
 
                 List<MatOfPoint> contours=new ArrayList<>();

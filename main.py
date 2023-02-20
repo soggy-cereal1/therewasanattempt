@@ -32,7 +32,7 @@ while True:
 
     # lower bound and upper bound for cyan
 
-    lower_bound_c = np.array([195,155,100])
+    lower_bound_c = np.array([185,150,100])
     upper_bound_c = np.array([255,255,160])
 
     # lower and upper bound for magenta
